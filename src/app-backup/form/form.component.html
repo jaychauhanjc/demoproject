@@ -1,0 +1,39 @@
+<p>
+  form works!
+</p>
+<!-- <form (ngsubmit)="formsubmit(f)" #f="ngForm">
+  <input type="text" name="username" ng-model class="form-control">
+  <br/>
+  <input type="text" name="password" class="form-control">
+  <br/>
+  <input type="text" name="email" class="form-control">
+  <br/>
+  <input type="text" name="city" class="form-control">
+  <br/>
+  <input type="submit" value="submit">
+</form> -->
+
+<form (ngSubmit)="formsubmit(f)" #f="ngForm" style="margin: 0 auto; width: 80%;">
+  <h2>Form Control</h2>
+  <div class="form-group">
+    <label for="txtUsername">Username</label>
+    <input type="text" class="form-control" id="txtUsername" name="uname" [(ngModel)]="username.uname" required  #uname=ngModel>
+    <div *ngIf="!uname.valid">Username cannot be blank</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="txtPassword">Password</label>
+    <input type="password" class="form-control" id="txtPassword"  name="pwd" [(ngModel)]="username.pwd" required>
+  </div>
+  <div class="form-group">
+    <label for="txtEmail">Email</label>
+    <input type="email" class="form-control" id="txtEmail" name="email" [(ngModel)]="username.email" required email=true #email=ngModel>
+    <div *ngIf="!email.valid">Email cannot be blank</div>
+  </div>
+  <div class="form-group">
+    <label for="txtCity">City</label>
+    <input type="text" class="form-control" id="txtCity" name="city" [(ngModel)]="username.city" required #city=ngModel>
+    <div *ngIf="!city.valid">City cannot be blank</div>
+  </div>
+  <button type="submit" class="btn btn-default"[disabled]=!f.valid>Submit</button>
+</form>

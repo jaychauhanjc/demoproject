@@ -1,0 +1,11 @@
+<p>
+  header works!
+</p>
+Name: 
+<!-- <input type="text" [value]="name" (input)="name=$event.target.value" /> -->
+<input type="text" [(ngModel)]="name" />
+{{name}}
+Profile Pic: <img [src]="profilepic" />
+
+<input type="button" class="btn btn-info" [class.active]="selected" value="Submit">
+<input type="button" class="btn btn-info" (click)="callme()" value="Submit">

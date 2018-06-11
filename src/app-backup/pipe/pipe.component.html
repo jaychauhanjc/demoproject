@@ -1,0 +1,17 @@
+<p>
+  pipe works!
+</p>
+
+{{ course.title | uppercase |lowercase }}
+<br/>
+{{ course.rating | number : '2.2-2'}}
+<br/>
+{{ course.students | number}}
+<br/>
+{{ course.price | currency:'INR' }}
+<br/>
+{{ course.releaseDate | date : 'MM/yy' }}
+<br/>
+{{ course.description | summary : 40 }}
+
+<!-- {{ course |json }} -->
